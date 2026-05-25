@@ -1,13 +1,12 @@
 {
   "name": "CotCheatMod",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "styleFileList": [],
-  "scriptFileList": [],
-  "tweeFileList": [],
-  "imgFileList": [],
-  "scriptFileList_inject_early": [
+  "scriptFileList": [
     "js/cheat.js"
   ],
+  "tweeFileList": [],
+  "imgFileList": [],
   "addonPlugin": [
     {
       "modName": "TweeReplacer",
@@ -18,6 +17,16 @@
           "passage": "StoryCaption",
           "findString": "<<button \"Help\">>",
           "replace": "<div class=\"fullwidth-buttons\">\n<<button \"⚙ 作弊選單\">><<run CotCheat.openMenu()>><</button>>\n</div>\n<<button \"Help\">>"
+        },
+        {
+          "passage": "Wardrobe",
+          "findString": "!$lastloctags.includes(\"homebase\") and !_stripallowed && !$pc.clothes_ok(V.location, V.locationblock, false)>>",
+          "replace": "!$cotNudist and !$lastloctags.includes(\"homebase\") and !_stripallowed && !$pc.clothes_ok(V.location, V.locationblock, false)>>"
+        },
+        {
+          "passage": "Wardrobe",
+          "findString": "<<elseif !$pc.skillleveled(\"Exhibitionism\", _exhibreq)>>",
+          "replace": "<<elseif !$cotNudist and !$pc.skillleveled(\"Exhibitionism\", _exhibreq)>>"
         }
       ]
     }

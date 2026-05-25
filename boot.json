@@ -15,8 +15,8 @@
       "params": [
         {
           "passage": "StoryCaption",
-          "findString": "<<button \"Help\">>",
-          "replace": "<div class=\"fullwidth-buttons\">\n<<button \"⚙ 作弊選單\">><<run CotCheat.openMenu()>><</button>>\n</div>\n<<button \"Help\">>"
+          "findString": "<div class=\"storymenu-debug-container\">",
+          "replace": "<div class=\"fullwidth-buttons\">\n<<button \"⚙ 作弊選單\">><<run CotCheat.openMenu()>><</button>>\n</div>\n<div class=\"storymenu-debug-container\">"
         },
         {
           "passage": "Wardrobe",

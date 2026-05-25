@@ -1,18 +1,35 @@
 {
   "name": "CotCheatMod",
-  "version": "v1.0.0",
+  "version": "1.1.0",
   "styleFileList": [],
-  "scriptFileList_preload": [
-    "js/cheat.js"
-  ],
   "scriptFileList": [],
   "tweeFileList": [],
   "imgFileList": [],
-  "additionFile": [],
+  "scriptFileList_inject_early": [
+    "js/cheat.js"
+  ],
+  "addonPlugin": [
+    {
+      "modName": "TweeReplacer",
+      "addonName": "TweeReplacerAddon",
+      "modVersion": "^1.0.0",
+      "params": [
+        {
+          "passage": "StoryCaption",
+          "findString": "<<button \"Help\">>",
+          "replace": "<div class=\"fullwidth-buttons\">\n<<button \"⚙ 作弊選單\">><<run CotCheat.openMenu()>><</button>>\n</div>\n<<button \"Help\">>"
+        }
+      ]
+    }
+  ],
   "dependenceInfo": [
     {
       "modName": "ModLoader",
       "version": "^2.0.0"
+    },
+    {
+      "modName": "TweeReplacer",
+      "version": "^1.0.0"
     }
   ]
 }
